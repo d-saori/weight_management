@@ -1,24 +1,9 @@
-# README
+# 体重管理アプリ
+- 体重を記録できるアプリです
+<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 環境
+- Ruby 2.6.6
+- Rails 5.2.5
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<br>
