@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+EMAIL = 'test@example.com'
+PASSWORD = 'password'
+
+# テストユーザーが存在しない時だけ作成し、変数名をuserとする
+user = User.find_or_create_by!(email: EMAIL) do |user|
+  user.password = PASSWORD
+  puts 'ユーザーの初期データインポートに成功しました'
+end
