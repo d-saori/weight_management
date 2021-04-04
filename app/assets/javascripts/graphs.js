@@ -24,7 +24,6 @@ document.addEventListener('turbolinks:load', () => {
     let barData = [5, 4, 2, 6, 5, 8]
 
     // 棒グラフのオプション
-
     const barChartData = {
         labels: barLabel,
         datasets: [{
@@ -59,14 +58,11 @@ document.addEventListener('turbolinks:load', () => {
         options: barChartOption
     })
 
-    // 本来 Javascript をここに書くべきではありません。プログラムの移動方法は後に解説します
-
     // 折れ線グラフのデータ（値を変更するとグラフが変化することを確認してみて下さい）
-    let lineLabel = ['1/1', '1/2', '1/4', '1/5', '1/6', '1/7']
-    let lineData = [60.3, 61.1, 60.8, null, 60.5, 61.4]
+    let lineLabel = gon.chart_label
+    let lineData = gon.chart_data
 
     // 折れ線グラフのオプション
-
     const lineChartData = {
         labels: lineLabel,
         datasets: [{
