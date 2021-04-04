@@ -53,6 +53,8 @@ gem 'chart-js-rails'
 gem 'flatpickr'
 # Gon（コントローラから Javascript に変数を渡せるようにする）
 gem 'gon'
+# Autoprefixer doesn't support Node v13 11.0 Update itエラー解消のため
+gem 'mini_racer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
