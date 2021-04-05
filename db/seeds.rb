@@ -18,8 +18,8 @@ END_DATE = Date.today + 1.months
 NO_RECORD_CONSTANT = 5
 
 # 記録する体重の範囲(乱数で値を決める都合上10倍にしておく)
-MIN_WEIGHT = 500
-MAX_WEIGHT = 800
+MIN_WEIGHT = 600
+MAX_WEIGHT = 620
 DIV_CONSTANT = 10
 
 # テストユーザーが存在しない時だけ作成し、変数名をuserとする
