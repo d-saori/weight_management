@@ -49,6 +49,12 @@ test:
 #
 production:
   <<: *default
-  database: weight_management_production
-  username: weight_management
-  password: <%= ENV['WEIGHT_MANAGEMENT_DATABASE_PASSWORD'] %>
+  # database: weight_management_production
+  # username: weight_management
+  # password: <%= ENV['WEIGHT_MANAGEMENT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: db/production.postgresql
+  pool: 5
+  username: test_postgre
+  password: 
