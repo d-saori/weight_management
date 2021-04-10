@@ -24,12 +24,18 @@ $ bundle install
 
 # 開発環境
 - Ruby 2.6.6
-- Rails 5.2.5
+- Rails 5.2.4
+- PostgreSQL 13.2
+- Bootstrap
+- Sass
+- JavaScript 
 <br>
 
 # 機能一覧
 - ログイン機能、新規登録(Devise)
 - ゲストログイン機能
+- カレンダー機能(flatpickr)
+- グラフ機能(Chart.js)
 
 <br>
 
