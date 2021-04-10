@@ -24,6 +24,15 @@
   padding: 1rem;
 }
 
+// ログイン画面
+.mw-md {
+  max-width: 576px;
+}
+
+.mw-xl {
+  max-width: 768px;
+}
+
 // フラッシュ
 div.alert-notice {
   @extend .alert-info;

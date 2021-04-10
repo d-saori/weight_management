@@ -10,11 +10,14 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-    <% if controller_name = 'graphs' %>
-      <%= render 'shared/flash_messages' %>
-    <% end %>
-    <div class="graph-container">
+    <header>
+      <%= render 'shared/header' %>
+    </header>
+      <!-- ログイン関連ページ以外にフラッシュ表示部分を追加 -->
+      <% if controller_name = 'graphs' %>
+        <%= render 'shared/flash_messages' %>
+      <% end %>
+    <div class="graph-container py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
       <%= yield %>
     </div>
   </body>
