@@ -52,6 +52,21 @@
     <%= f.number_field :weight, :class => 'text_field' %>
   </div>
 
+  <div class="field">
+    <%= f.label :目標体重 %><br />
+    <%= f.number_field :target_weight, :class => 'text_field' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :目標体脂肪 %><br />
+    <%= f.number_field :target_body, :class => 'text_field' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile %><br />
+    <%= f.text_area :profile %>
+  </div>
+
   <div class="form-group">
     <%= f.submit "更新", class: 'btn btn-primary btn-block' %>
   </div>
