@@ -1,8 +1,16 @@
-<h1><%= t('.sign_in') %></h1>
+<h1>体重を管理して健康維持を目指しましょう！</h1>
+<h4>日々の体重のデータを可視化する事で生活習慣を見直すきっかけに！</h4>
+<h4>体重の記録が簡単に行えます。</h4>
+
+<br><br>
+<%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class: 'btn btn-warning btn-block'  %>
+<br><hr>
+
+<h2><%= t('.sign_in') %></h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label :メールアドレス %>
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
 

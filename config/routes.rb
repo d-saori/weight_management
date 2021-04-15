@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/show'
   root 'graphs#index'
+
   devise_for :users, controllers: {
     registrations: 'users/registrations', passwords: 'users/passwords'
   }
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
   end
   # updateに「:id」は不要なのでresource「s」ではない事に注意
   resource :graphs, only: %i[index create update]
+  resources :users, only: [:show]
 end
