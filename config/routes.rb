@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'users/show'
-  root 'graphs#index'
+  root 'homes#top'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations', passwords: 'users/passwords'
