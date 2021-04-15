@@ -4,8 +4,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def ensure_normal_user
     if resource.email == 'test@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーは編集・削除できません。'
+      redirect_to graphs_path, alert: 'ゲストユーザーは編集・削除できません。'
     end
+  end
+
+  # 新規登録後のリダイレクト先
+  def after_sign_up_path_for(resource)
+    graphs_path
+  end
+  
+  # アカウント編集後のリダイレクト先
+  def after_update_path_for(resource)
+    graphs_path
   end
 
   protected
