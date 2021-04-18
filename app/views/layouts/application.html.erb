@@ -17,7 +17,7 @@
       <% if controller_name = 'graphs' %>
         <%= render 'shared/flash_messages' %>
       <% end %>
-    <div class="graph-container py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
+        <div class="graph-container py-4 <%= devise_controller? ? 'mw-md' : 'mw-xl' %>">
       <%= yield %>
     </div>
   </body>
