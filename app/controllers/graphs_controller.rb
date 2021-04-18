@@ -5,6 +5,11 @@ class GraphsController < ApplicationController
     gon.recorded_dates = current_user.graphs.map(&:date)
   end
 
+  def show
+    @user = current_user
+    # @graphs = User.find(params[:id])
+  end
+
   def create
     @graph = current_user.graphs.build(graph_params)
     date = @graph.date.strftime('%Y/%-m/%-d')

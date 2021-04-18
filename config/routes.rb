@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   end
   # updateに「:id」は不要なのでresource「s」ではない事に注意
   resource :graphs, only: %i[create update]
-  resources :graphs, only: [:index]
-  resources :users, only: [:show]
+  resources :graphs, only: [:index, :show]
+  # resources :users, only: [:show]
 end
