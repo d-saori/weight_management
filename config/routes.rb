@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'users/show'
-  root 'graphs#index'
+  get '/graphs', to: 'graphs#index'
+  root 'homes#top'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations', passwords: 'users/passwords'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
   # updateに「:id」は不要なのでresource「s」ではない事に注意
-  resource :graphs, only: %i[index create update]
-  resources :users, only: [:show]
+  resource :graphs, only: %i[create update]
+  resources :graphs, only: [:index, :show]
+  # resources :users, only: [:show]
 end

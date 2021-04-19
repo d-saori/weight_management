@@ -1,0 +1,29 @@
+// トップページの背景画像
+#top {
+  background-image: image-url('pexels-pixabay-40751.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #000000;
+  z-index: 0;
+  background: #FFFFFF image-url('pexels-pixabay-40751.jpg') no-repeat;
+  background-size: cover;
+}
+
+#top::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.top-text {
+  text-shadow: 0 0 10px #FFFFFF;
+  color: #000000;
+}
