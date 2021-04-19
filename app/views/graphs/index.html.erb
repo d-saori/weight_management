@@ -46,3 +46,16 @@
 </div>
 <canvas id="chart-weight" class="mt-5"></canvas>
 
+<br>
+<dl class="searchbox">
+  <%= search_form_for @q, url: graphs_path do |f| %>
+  <div class="flex margin-top-10">
+    <p><dt><%= f.label :体重検索 %></dt></p>
+    <div class="input_space flex">
+      <dd class="dd1"><%= f.number_field :weight, :class => 'text_field', :step => 0.1 %>以上〜</dd>
+      <dd class="dd2"><%= f.number_field :weight, :class => 'text_field', :step => 0.1 %>未満</dd>
+    </div>
+  </div>
+    <%= f.submit "検索", class: 'search-btn' %>
+  <% end %>
+</dl>

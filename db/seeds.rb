@@ -8,10 +8,6 @@
 
 EMAIL = 'test@example.com'
 PASSWORD = 'password'
-# USERNAME = 'test'
-# AGE = 20
-# HEIGHT = 160
-# WEIGHT = 50
 
 # データの入力範囲
 START_DATE = Date.today - 11.months

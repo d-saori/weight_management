@@ -33,6 +33,8 @@ gem 'flatpickr'
 gem 'gon'
 # Autoprefixer doesn't support Node v13 11.0 Update itエラー解消のため
 gem 'mini_racer'
+# 検索
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
