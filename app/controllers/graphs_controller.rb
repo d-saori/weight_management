@@ -3,14 +3,21 @@ class GraphsController < ApplicationController
 
   def index
     # ransack検索用
-    @q = Graph.ransack(params[:q])
-    @graphs = @q.result(distinct: true).order(graph_date: "DESC")
+    # @q = Graph.ransack(params[:q])
+    # @graphs = @q.result(distinct: true).order(date: "DESC")
+    # gon.graphs = @q.result(distinct: true).order(date: "DESC")
 
     # DBにある体重データをJavascriptに渡す
     gon.weight_records = Graph.chart_data(current_user)
     # 記録済みの日付データ
     gon.recorded_dates = current_user.graphs.map(&:date)
   end
+
+  # def search
+  #   @q = Graph.search(params_graph_search)
+  #   @graphs = @q.result(distinct: true).order(date: "DESC")
+    # gon.graphs = @q.result(distinct: true).order(date: "DESC")
+  # end
 
   def show
     # @graphs = User.find(params[:id])
@@ -49,11 +56,7 @@ class GraphsController < ApplicationController
       params.require(:graph).permit(:date, :weight)
     end
 
-    def params_graph_search
-      params.permit(:search_weight)
-    end
-
-    # def set_q
-    #   @q = Graph.ransack(params[:q])
+    # def params_graph_search
+    #   params.permit(:weight_gt)
     # end
 end

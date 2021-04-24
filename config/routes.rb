@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'users/show'
-  get '/graphs', to: 'graphs#index'
+  # get 'graph', to: 'graphs#search'
   root 'homes#top'
 
   devise_for :users, controllers: {

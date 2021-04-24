@@ -2,7 +2,7 @@ document.addEventListener('turbolinks:load', () => {
     // Javascriptが他のページで動作しないようにする（検証ツールでエラーが発生するのを防ぐ）
     if (document.getElementById('start-calendar')) {
         // '2021-04-06'のような文字列から、Javascriptの日付オブジェクトを取得する関数
-        // setHoursを使用しないと、時差の影響で0時にならないため注意！
+        // setHoursを使用しないと、時差の影響で0時にならない
         const convertDate = (date) => new Date(new Date(date).setHours(0, 0, 0, 0))
 
         // 日付の古い方・新しい方を取得する関数
@@ -76,7 +76,7 @@ document.addEventListener('turbolinks:load', () => {
         // グラフを描く場所を取得
         const chartWeightContext = document.getElementById("chart-weight").getContext('2d')
         // 関数内で変数宣言をするとローカル変数となり、関数の外で消えてしまう
-        // drawGraph 関数の外で変数宣言をしなければならない!
+        // drawGraph 関数の外で変数宣言する
         let chartWeight
 
         // 期間を指定してグラフを描く
@@ -166,7 +166,12 @@ document.addEventListener('turbolinks:load', () => {
             drawGraphToToday(THREE_MONTHS_AGO)
         })
 
+        // 体重◯以上のグラフを描くボタン
+        // document.getElementsById('weigth-more-button').addEventListener('click', () => {
+        //     drawGraphToToday(WEIGTH_MORE)
+        // })
+
         // グラフの初期表示(当日から一週間前に指定)
-        drawGraph(A_WEEK_AGO, TODAY)
+        drawGraphToToday(A_WEEK_AGO)
     }
 })
