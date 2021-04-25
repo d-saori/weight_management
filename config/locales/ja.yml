@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+      comment: "コメント"
+      admin_user: "管理者"
+    attributes:
+      user:
+        username: "ユーザー名"
+        age: "年齢"
+        gender: "性別"
+        height: "身長"
+        weight: "体重"
+        profile: "プロフィール"
+        target_weight: "目標体重"
+        target_body: "目標体脂肪"

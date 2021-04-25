@@ -1,12 +1,16 @@
 class ApplicationController < ActionController::Base
   # 全ページをログイン必須とする
-  before_action :authenticate_user!, except: [:top]
+  # before_action :authenticate_user!, except: [:top]
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # ログイン後のリダイレクト先
   def after_sign_in_path_for(resource)
-    graphs_path
+    if resource.is_a?(AdminUser)
+      admin_root_path
+    else
+      graphs_path
+    end
   end
 
   protected
