@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get '/graphs', to: 'graphs#index'
-  root 'homes#top'
-
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, controllers: {
     registrations: 'users/registrations', passwords: 'users/passwords'
   }
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
+
+  get 'users/show'
+  # get 'graph', to: 'graphs#search'
+  root 'homes#top'
+
   # updateに「:id」は不要なのでresource「s」ではない事に注意
   resource :graphs, only: %i[create update]
   resources :graphs, only: [:index, :show]

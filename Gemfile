@@ -35,6 +35,8 @@ gem 'gon'
 gem 'mini_racer'
 # 検索
 gem 'ransack'
+# 管理者画面
+gem 'activeadmin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

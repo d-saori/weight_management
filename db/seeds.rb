@@ -42,3 +42,6 @@ graphs = []
 }
 Graph.create!(graphs)
 puts "体重の初期データ投入に成功しました!"
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+puts "管理者ユーザー投入に成功しました!"
