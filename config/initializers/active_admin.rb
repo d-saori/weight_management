@@ -1,11 +1,4 @@
 ActiveAdmin.setup do |config|
-  # BASIC認証
-  config.authenticate_with do
-    authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      username == 'admin' && password == 'admin'
-    end
-  end
-  
   # == Site Title
   #
   # Set the title that is displayed on the main layout

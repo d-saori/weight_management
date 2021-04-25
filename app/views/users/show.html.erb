@@ -1,13 +1,50 @@
-<h1>プロフィール</h1>
-<p>名前：<%= @user.username %></p>
-<p>年齢：<%= @user.age %></p>
-<p>性別：<%= @user.gender %></p>
-<p>身長：<%= @user.height %></p>
-<p>現在体重：<%= @user.weight %></p>
-<p>目標体重：<%= @user.target_weight %></p>
-<p>目標体脂肪：<%= @user.target_body %></p>
-<p>プロフィール : <%= @user.profile %></p>
+<div class="center-block">
+  <h1>プロフィール</h1><br>
 
-<div class="form-group my-5">
-  <%= link_to "トップページ", graphs_path, class: 'btn btn-dark w-50' %>
+  <p><%= image_tag @user.avatar.url %></p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">名前</th>
+        <th scope="col"><%= @user.username %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">年齢</th>
+        <td><%= @user.age %> 歳</td>
+      </tr>
+      <tr>
+        <th scope="row">性別</th>
+        <td><%= @user.gender %></td>
+      </tr>
+      <tr>
+        <th scope="row">身長</th>
+        <td><%= @user.height %> cm</td>
+      </tr>
+      <tr>
+        <th scope="row">現在体重</th>
+        <td><%= @user.weight %> kg</td>
+      </tr>
+      <tr>
+        <th scope="row">目標体重</th>
+        <td><%= @user.target_weight %> kg</td>
+      </tr>
+      <tr>
+        <th scope="row">目標体脂肪率</th>
+        <td><%= @user.target_body %> %</td>
+      </tr>
+      <tr>
+        <th scope="row">自己紹介</th>
+        <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+  <div class="form-group my-5">
+    <p><%= link_to "トップページ", graphs_path, class: 'btn btn-dark w-50' %></p>
+  </div>
 </div>
