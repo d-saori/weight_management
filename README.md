@@ -34,6 +34,7 @@ $ bundle install
 # 機能一覧
 - ログイン機能、新規登録(Devise)
 - ゲストログイン機能
+- 管理者画面(ActiveAdmin)
 - カレンダー機能(flatpickr)
 - グラフ機能(Chart.js)
 
