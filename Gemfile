@@ -37,6 +37,8 @@ gem 'mini_racer'
 gem 'ransack'
 # 管理者画面
 gem 'activeadmin'
+# 画像投稿機能
+gem 'carrierwave', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
