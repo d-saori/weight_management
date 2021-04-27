@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /\A[a-z\d]{6,10}+\z/i
+  VALID_PASSWORD_REGEX = /\A[a-z\d]{6,23}+\z/i
   VALID_DATA_REGEX = /\A[-]?[0-9]+(\.[0-9]+)?\z/i
 
   validates :email,
@@ -13,7 +13,7 @@ class User < ApplicationRecord
             uniqueness: true,
             length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6~10文字英数小文字" }
+  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6~23文字英数小文字" }
   validates :username, presence: true, length: { maximum: 30 }
   validates :age, numericality: true, inclusion: { in: 0..150 }
   validates :gender, presence: true
@@ -39,9 +39,9 @@ class User < ApplicationRecord
     end
   end
 
-  validate :password_complexity
-  def password_complexity
-    return if password.blank? || password =~ /\A[a-z\d]{6,10}+\z/
-    errors.add :password, 'の長さは6〜10文字英数小文字'
-  end
+  # validate :password_complexity
+  # def password_complexity
+  #   return if password.blank? || password =~ /\A[a-z\d]{6,10}+\z/
+  #   errors.add :password, 'の長さは6〜10文字英数小文字'
+  # end
 end
