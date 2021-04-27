@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
-    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    "/images/fallback/" + [version_name, "default.jpg"].compact.join('_')
   end
 
   # Process files as they are uploaded:
@@ -49,7 +49,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   process convert: "jpeg"
-  process resize_to_limit: [200, 300]
+  process resize_to_limit: [200, 200]
 
   def filename
     super.chomp(File.extname(super)) + ".jpg" if original_filename.present?

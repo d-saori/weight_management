@@ -1,9 +1,10 @@
 class Graph < ApplicationRecord
   belongs_to :user
 
+  VALID_DATA_REGEX = /\A[a-z0-9]+\z/i
   # 一人のユーザーが同じ日付のデータを複数記録できないようにする
   validates :date, presence: true, uniqueness: { scope: :user_id }
-  validates :weight, presence: true
+  validates :weight, presence: true, format: { with: VALID_DATA_REGEX }
 
   def self.chart_data(user)
     # そのままデータを取り出すと日付が不連続なデータになる為、日付の連続したデータを作成(asc:昇順)
