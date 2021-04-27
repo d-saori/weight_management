@@ -20,8 +20,8 @@ class User < ApplicationRecord
   validates :height, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :profile, length: { maximum: 1000 }
-  validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
-  validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
+  # validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
+  # validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
 
   mount_uploader :avatar, ImageUploader
 

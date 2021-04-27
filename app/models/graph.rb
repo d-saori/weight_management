@@ -1,7 +1,7 @@
 class Graph < ApplicationRecord
   belongs_to :user
 
-  VALID_DATA_REGEX = /\A[a-z0-9]+\z/i
+  VALID_DATA_REGEX = /\A[-]?[0-9]+(\.[0-9]+)?\z/i
   # 一人のユーザーが同じ日付のデータを複数記録できないようにする
   validates :date, presence: true, uniqueness: { scope: :user_id }
   validates :weight, presence: true, format: { with: VALID_DATA_REGEX }

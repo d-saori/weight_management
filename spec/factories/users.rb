@@ -8,7 +8,7 @@ FactoryBot.define do
     height { Faker::Number.between(from: 100, to: 200) }
     weight { Faker::Number.between(from: 40, to: 120) }
     profile { Faker::Lorem.sentence }
-    target_weight { Faker::Number.between(from: 40, to: 100) }
-    target_body { Faker::Number.between(from: 5, to: 40) }
+    # target_weight { Faker::Number.between(from: 40, to: 100) }
+    # target_body { Faker::Number.between(from: 5, to: 40) }
   end
 end
