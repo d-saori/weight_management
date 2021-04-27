@@ -26,8 +26,8 @@ RSpec.describe User, type: :model do
       end
     end
     context "email がすでに存在する時" do
-      before { create(:user, email: "test@example.com") }
-      let(:user) { build(:user, email: "test@example.com") }
+      before { create(:user, email: "abcd@example.com") }
+      let(:user) { build(:user, email: "abcd@example.com") }
       it "エラーが発生する" do
         expect(subject).to eq false
         expect(user.errors.messages[:email]).to include "はすでに存在します"
