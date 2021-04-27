@@ -38,11 +38,11 @@ $ bundle install
 - カレンダー機能(flatpickr)
 - グラフ機能(Chart.js)
 - 画像投稿機能(CarrierWave,imagemagick)
+- RSpecを使用したテストコードの実装(随時拡充中)
 
 <br>
 
 __【今後追加予定機能】__ <br>
-- RSpecを使用したテストコードの実装
 - AWSデプロイ
 - ユーザー検索機能(Ransackを使用）
 - 体重以外の数値(体脂肪、摂取カロリー、消化エネルギー)記録機能
