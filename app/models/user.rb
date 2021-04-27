@@ -15,10 +15,10 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6~10文字英数小文字" }
   validates :username, presence: true, length: { maximum: 30 }
-  validates :age, presence: true, numericality: { only_integer: true }, inclusion: { in: 0..150 }
+  validates :age, numericality: { only_integer: true }, inclusion: { in: 0..150 }
   validates :gender, presence: true
-  validates :height, presence: true, format: { with: VALID_DATA_REGEX }
-  validates :weight, presence: true, format: { with: VALID_DATA_REGEX }
+  validates :height, format: { with: VALID_DATA_REGEX }
+  validates :weight, format: { with: VALID_DATA_REGEX }
   validates :profile, length: { maximum: 1000 }
   validates :target_weight, format: { with: VALID_DATA_REGEX }
   validates :target_body, format: { with: VALID_DATA_REGEX } 
