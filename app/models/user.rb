@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A[a-z\d]{6,10}+\z/i
-  VALID_DATA_REGEX = /\A[a-z0-9]+\z/i
+  VALID_DATA_REGEX = /\A[-]?[0-9]+(\.[0-9]+)?\z/i
 
   validates :email,
             presence: true,
@@ -15,13 +15,13 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6~10文字英数小文字" }
   validates :username, presence: true, length: { maximum: 30 }
-  validates :age, numericality: { only_integer: true }, inclusion: { in: 0..150 }
+  validates :age, numericality: true, inclusion: { in: 0..150 }
   validates :gender, presence: true
-  validates :height, format: { with: VALID_DATA_REGEX }
-  validates :weight, format: { with: VALID_DATA_REGEX }
+  validates :height, numericality: true, format: { with: VALID_DATA_REGEX }
+  validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :profile, length: { maximum: 1000 }
-  validates :target_weight, format: { with: VALID_DATA_REGEX }
-  validates :target_body, format: { with: VALID_DATA_REGEX } 
+  validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
+  validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
 
   mount_uploader :avatar, ImageUploader
 
