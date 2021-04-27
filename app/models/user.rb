@@ -30,7 +30,18 @@ class User < ApplicationRecord
     # !は例外を発生させる(!がないとログインされないままリダイレクトされる)
     find_or_create_by!(email: 'test@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.username = "ゲスト"
+      user.age = 20
+      user.gender = "男"
+      user.height = 160
+      user.weight = 50
       # user.confirmed_at = Time.now
     end
+  end
+
+  validate :password_complexity
+  def password_complexity
+    return if password.blank? || password =~ /\A[a-z\d]{6,10}+\z/
+    errors.add :password, 'の長さは6〜10文字英数小文字'
   end
 end
