@@ -35,6 +35,7 @@ class User < ApplicationRecord
       user.gender = "男"
       user.height = 160
       user.weight = 50
+      user.profile = "ご覧いただきありがとうございます！\r\n健康の為にダイエットを決意いたしました！一緒に頑張りましょう！"
       # user.confirmed_at = Time.now
     end
   end
