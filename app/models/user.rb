@@ -13,15 +13,15 @@ class User < ApplicationRecord
             uniqueness: true,
             length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }
-  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6~23文字英数小文字" }
+  validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6文字以上23文字以下英数小文字" }
   validates :username, presence: true, length: { maximum: 30 }
   validates :age, numericality: true, inclusion: { in: 0..150 }
   validates :gender, presence: true
   validates :height, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :profile, length: { maximum: 1000 }
-  # validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
-  # validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
+  validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
+  validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
 
   mount_uploader :avatar, ImageUploader
 
@@ -34,8 +34,10 @@ class User < ApplicationRecord
       user.age = 20
       user.gender = "男"
       user.height = 160
-      user.weight = 50
+      user.weight = 55
       user.profile = "ご覧いただきありがとうございます！\r\n健康の為にダイエットを決意いたしました！一緒に頑張りましょう！"
+      user.target_weight = 50
+      user.target_body = 20
       # user.confirmed_at = Time.now
     end
   end
