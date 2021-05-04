@@ -14,13 +14,13 @@ class User < ApplicationRecord
             length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6文字以上23文字以下英数小文字" }
-  validates :username, length: { maximum: 30 }
-  validates :age, numericality: true, inclusion: { in: 0..150 }
-  validates :height, numericality: true, format: { with: VALID_DATA_REGEX }
-  validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }
-  validates :profile, length: { maximum: 1000 }
-  validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }
-  validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX } 
+  validates :username, length: { maximum: 30 }, allow_blank: true
+  validates :age, numericality: true, inclusion: { in: 0..150 }, allow_blank: true
+  validates :height, numericality: true, format: { with: VALID_DATA_REGEX }, allow_blank: true
+  validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }, allow_blank: true
+  validates :profile, length: { maximum: 1000 }, allow_blank: true
+  validates :target_weight, numericality: true, format: { with: VALID_DATA_REGEX }, allow_blank: true
+  validates :target_body, numericality: true, format: { with: VALID_DATA_REGEX }, allow_blank: true
 
   mount_uploader :avatar, ImageUploader
 
