@@ -14,9 +14,8 @@ class User < ApplicationRecord
             length: { maximum: 255 },
             format: { with: VALID_EMAIL_REGEX }
   validates :password, presence: true, format: { with: VALID_PASSWORD_REGEX, message: "は半角6文字以上23文字以下英数小文字" }
-  validates :username, presence: true, length: { maximum: 30 }
+  validates :username, length: { maximum: 30 }
   validates :age, numericality: true, inclusion: { in: 0..150 }
-  validates :gender, presence: true
   validates :height, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :weight, numericality: true, format: { with: VALID_DATA_REGEX }
   validates :profile, length: { maximum: 1000 }
