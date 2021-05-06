@@ -36,7 +36,11 @@
       </tr>
       <tr>
         <th scope="row">自己紹介</th>
-        <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
+        <% if @user.profile.nil? %>
+          <td><%= @user.profile %> %</td>
+        <% else %>
+          <td><%= safe_join(@user.profile.split("\n"),tag(:br)) %></td>
+        <% end %>
       </tr>
     </tbody>
   </table>
