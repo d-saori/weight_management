@@ -103,6 +103,8 @@ GEM
       i18n (>= 1.6, < 2)
     ffi (1.15.0)
     flatpickr (4.6.6.0)
+    font-awesome-rails (4.7.0.7)
+      railties (>= 3.2, < 7)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.6.0)
@@ -318,6 +320,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   flatpickr
+  font-awesome-rails
   gon
   jbuilder (~> 2.5)
   jquery-rails

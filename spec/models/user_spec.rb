@@ -82,13 +82,6 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:age]).to include "は一覧にありません"
       end
     end
-    context "gender が空の時" do
-      let(:user) { build(:user, gender: "") }
-      it "エラーが発生する" do
-        expect(subject).to eq false
-        expect(user.errors.messages[:gender]).to include "を入力してください"
-      end
-    end
     context "height が文字列の時" do
       let(:user) { build(:user, height: "a") }
       it "エラーが発生する" do
