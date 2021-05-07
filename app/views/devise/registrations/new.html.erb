@@ -7,18 +7,18 @@
     <br>
     <div class="field">
       <%= f.label :氏名 %><br />
-      <%= f.text_field :username, autofocus: true, class: 'form-control form-control-sm' %>
+      <%= f.text_field :username, autofocus: true, class: 'form-control form-control-sm', placeholder: "例)ごまつくね" %>
     </div>
 
     <br>
     <div class="form-group">
       <%= f.label :メールアドレス %>
-      <%= f.email_field :email, class: 'form-control form-control-sm', required: true %>
+      <%= f.email_field :email, class: 'form-control form-control-sm', required: true, placeholder: "PC・携帯どちらでも可" %>
     </div>
 
     <div class="form-group">
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control form-control-sm', required: true, minlength: @minimum_password_length, maxlength: '30' %>
+      <%= f.password_field :password, class: 'form-control form-control-sm', required: true, placeholder: "半角6文字以上英数小文字", minlength: @minimum_password_length, maxlength: '30' %>
 
       <% if @minimum_password_length %>
         <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
